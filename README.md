@@ -1,18 +1,22 @@
 # Everett Student Projects
-This repo is both to store data regarding the student project map, as well as to teach a lesson on the issues and limitations of the CSV format.
+This repo is both to store data regarding the student project map, as well as to teach a lesson about reformating data from one source and getting it ready for another platform. It also explores on the issues and limitations of the CSV format.
 
 ====
+## Cleaning Data
+You'll often get data from one source and need to put it into another. In a perfect world, everything works with everything else, but we don't live in that world.
+### raw.csv
+This file contains the map data as it was exported from the Everett website back in Winter of 2015. It's unusable in this form, but it can actually be fixed in only a few steps. Find out how in [This Screencast](https://www.youtube.com/watch?v=-mspWUFXTJI)!
 
+## Dealing with Commas and Paragraph Text
 The problem with Comma Separated Values (CSV) format is that it can give you problems when you're trying to put paragraph data in one of the columns. In the case of this map data, regarding Everett student projects, we have all the project vitals (location, project title, etc.) and at the end we have a paragraph describing the project in the column "Description".
 
 Paragraphs often contain numerous sentences, and some of those sentences will invariably contain multiple clauses which are separated by...Commas! Without taking special steps, these commas will be interpated as being the same as the commas that separate your columns instead of part of a paragraph. Consequently, everything gets all messed up. This repo is to explore various ways of dealing with this issue.
 
-See [this video](https://www.youtube.com/watch?v=-mspWUFXTJI&index=7&list=PLIqJbvOWQJXLF_5Lw7oiQbgI37BKK0R87) that takes you through a real world example of how this data got to be all nice and neat from the rather messy source.
  
-## projects.csv
+### projects.csv
 By wrapping the "Description" paragraph in double quotes, we signal that everything inside the quotes should be treated as part of a single paragraph. In other words, the commas inside the quotes are not delimeters, they are a string.
 
-### A Note on Placing Quotes in a CSV
+#### A Note on Placing Quotes in a CSV
 It can be very tricky to put quotes into the proper place in a CSV. Think about how you would actually go about doing it. A CSV file doesn't have easily human readable columns, just commas. You could open a CSV in Excel, but it's still going to see those commas as new columns. So how are you supposed to put them at the beginning and end of the description?
 
 One way of doing this is to leverage the ultra-powerful concept of "Regular Expressions" or "Regex" to understand the pattern we are trying to create. Regex is basically a sophisticated form of find and replace that uses symbols to represent patterns of text rather than exact matches.
@@ -31,10 +35,10 @@ Replace:
 -->
 
 
-## projects.tsv
+### projects.tsv
 If CSV is **Comma** Separated Values, then TSV is obviously **Tab** Separated Values. This is simply a matter of saying that tabs are the delimiting character rather than commas.
 
-## using-html-entities.csv
+### using-html-entities.csv
 Symbols like typographer quotes (&ldquo; &rdquo;), pilcrows (&para;), and accent marks (&aacute;, &eacute;, &iacute;) won't show up if you put them directly into your html. The browser doesn't know what to do with them. Instead you have to use an "HTML Enitity". This consists of typing an ampersand, the entity value, and a semicolon. Some examples:
 
 * Euro Sign - &euro; = `&euro;`* 
