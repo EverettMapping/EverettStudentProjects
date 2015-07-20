@@ -1,5 +1,8 @@
 # Everett Student Projects
-This repo is both to store data regarding the student project map, as well as to teach a lesson about reformating data from one source and getting it ready for another platform. It also explores on the issues and limitations of the CSV format.
+This repo is here to teach a lesson about reformating data from one source and getting it ready for another platform. It also explores on the issues and limitations of the CSV format.
+
+**Update 07/17/15**
+Some of the coordinates in the projects were messed up somehow. It's pointless work to go back and fix them, so we'll only be correcting one: Everett-Projects-Map-Data.csv because that's the one we'll be using to update the map data on the main site.
 
 ====
 ## Cleaning Data
